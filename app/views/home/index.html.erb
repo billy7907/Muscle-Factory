@@ -1,0 +1,25 @@
+<%= render partial: 'layouts/navbar' %>
+<div class='text-center'>
+  <div style='background-color:rgba(0,0,0,0.6); height:200px'>
+    <h1 style='color:red; padding-top:50px'>WorkOUT</h1>
+
+  </div>
+
+</div>
+
+
+<script>
+$(function() {
+  $('body').vegas({
+      slides: [
+          { src: '<%= image_path('image05') %>' },
+          { src: '<%= image_path('image01') %>' },
+          { src: '<%= image_path('image02') %>' },
+          { src: '<%= image_path('image03') %>' },
+          { src: '<%= image_path('image04') %>' },
+          { src: '<%= image_path('image06') %>' },
+          { src: '<%= image_path('image07') %>' }
+      ]
+  });
+});
+</script>

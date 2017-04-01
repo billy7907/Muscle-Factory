@@ -1,0 +1,259 @@
+<div class='container text-center'>
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <h1>My Program </h1>
+  <hr>
+
+  <div class='row'>
+    <h2>Monday Program</h2>
+    <% if Drill.where(day_id:0).count > 0 %>
+      <h3><%= Drill.where(day_id:0).first.exercise.group.name %> Day</h3>
+      <br>
+
+      <div class='col-md-3'><span><strong>Exercises</strong></span></div>
+      <div class='col-md-3'><span><strong>Sets</strong></span></div>
+      <div class='col-md-3'><span><strong>Reps</strong></span></div>
+      <div class='col-md-3'><span style='color:white; margin:2px'><strong>DELETE</strong></span></div>
+
+
+      <% Drill.where(day_id:0).each do |x| %>
+      <div id="drill<%= x.id %>">
+        <div class='col-md-3'>
+          <span><%= x.exercise.name %></span>
+        </div>
+        <div class='col-md-3'>
+          <span><%= x.sets %></span>
+        </div>
+        <div class='col-md-3'>
+          <span><%= x.reps %></span>
+        </div>
+        <div class='col-md-3'>
+          <%= link_to 'Delete', drill_path(x), method: :delete, remote: true, class:'btn btn-primary btn-sm'%>
+        </div>
+      </div>
+      <% end %>
+
+
+      <hr>
+    <% else %>
+      <span>Rest Day</span>
+    <% end %>
+  </div>
+  <hr>
+
+
+  <div class='row'>
+    <h2>Tuesday Program</h2>
+    <% if Drill.where(day_id:1).count > 0 %>
+      <h3><%= Drill.where(day_id:1).first.exercise.group.name %> Day</h3>
+      <br>
+
+      <div class='col-md-3'><span><strong>Exercises</strong></span></div>
+      <div class='col-md-3'><span><strong>Sets</strong></span></div>
+      <div class='col-md-3'><span><strong>Reps</strong></span></div>
+      <div class='col-md-3'><span style='color:white'><strong>DELETE</strong></span></div>
+
+
+      <% Drill.where(day_id:1).each do |x| %>
+      <div id="drill<%= x.id %>">
+        <div class='col-md-3'>
+          <span><%= x.exercise.name %></span>
+        </div>
+        <div class='col-md-3'>
+          <span><%= x.sets %></span>
+        </div>
+        <div class='col-md-3'>
+          <span><%= x.reps %></span>
+        </div>
+        <div class='col-md-3'>
+          <%= link_to 'Delete', drill_path(x), method: :delete, remote: true, class:'btn btn-primary btn-sm'%>
+        </div>
+      </div>
+      <% end %>
+      <hr>
+    <% else %>
+      <span>Rest Day</span>
+    <% end %>
+  </div>
+  <hr>
+
+
+  <div class='row'>
+    <h2>Wednesday Program</h2>
+    <% if Drill.where(day_id:2).count > 0 %>
+      <h3><%= Drill.where(day_id:2).first.exercise.group.name %> Day</h3>
+      <br>
+
+      <div class='col-md-3'><span><strong>Exercises</strong></span></div>
+      <div class='col-md-3'><span><strong>Sets</strong></span></div>
+      <div class='col-md-3'><span><strong>Reps</strong></span></div>
+      <div class='col-md-3'><span style='color:white'><strong>DELETE</strong></span></div>
+
+
+      <% Drill.where(day_id:2).each do |x| %>
+      <div id="drill<%= x.id %>">
+        <div class='col-md-3'>
+          <span><%= x.exercise.name %></span>
+        </div>
+        <div class='col-md-3'>
+          <span><%= x.sets %></span>
+        </div>
+        <div class='col-md-3'>
+          <span><%= x.reps %></span>
+        </div>
+        <div class='col-md-3'>
+          <%= link_to 'Delete', drill_path(x), method: :delete, remote: true, class:'btn btn-primary btn-sm'%>
+        </div>
+      </div>
+      <% end %>
+      <hr>
+    <% else %>
+      <span>Rest Day</span>
+    <% end %>
+  </div>
+  <hr>
+
+
+  <div class='row'>
+    <h2>Thursday Program</h2>
+    <% if Drill.where(day_id:3).count > 0 %>
+      <h3><%= Drill.where(day_id:3).first.exercise.group.name %> Day</h3>
+      <br>
+
+      <div class='col-md-3'><span><strong>Exercises</strong></span></div>
+      <div class='col-md-3'><span><strong>Sets</strong></span></div>
+      <div class='col-md-3'><span><strong>Reps</strong></span></div>
+      <div class='col-md-3'><span style='color:white'><strong>DELETE</strong></span></div>
+
+
+      <% Drill.where(day_id:3).each do |x| %>
+      <div id="drill<%= x.id %>">
+        <div class='col-md-3'>
+          <span><%= x.exercise.name %></span>
+        </div>
+        <div class='col-md-3'>
+          <span><%= x.sets %></span>
+        </div>
+        <div class='col-md-3'>
+          <span><%= x.reps %></span>
+        </div>
+        <div class='col-md-3'>
+          <%= link_to 'Delete', drill_path(x), method: :delete, remote: true, class:'btn btn-primary btn-sm'%>
+        </div>
+      </div>
+      <% end %>
+      <hr>
+    <% else %>
+      <span>Rest Day</span>
+    <% end %>
+  </div>
+  <hr>
+
+
+  <div class='row'>
+    <h2>Friday Program</h2>
+    <% if Drill.where(day_id:4).count > 0 %>
+      <h3><%= Drill.where(day_id:4).first.exercise.group.name %> Day</h3>
+      <br>
+
+      <div class='col-md-3'><span><strong>Exercises</strong></span></div>
+      <div class='col-md-3'><span><strong>Sets</strong></span></div>
+      <div class='col-md-3'><span><strong>Reps</strong></span></div>
+      <div class='col-md-3'><span style='color:white'><strong>DELETE</strong></span></div>
+
+
+      <% Drill.where(day_id:4).each do |x| %>
+      <div id="drill<%= x.id %>">
+        <div class='col-md-3'>
+          <span><%= x.exercise.name %></span>
+        </div>
+        <div class='col-md-3'>
+          <span><%= x.sets %></span>
+        </div>
+        <div class='col-md-3'>
+          <span><%= x.reps %></span>
+        </div>
+        <div class='col-md-3'>
+          <%= link_to 'Delete', drill_path(x), method: :delete, remote: true, class:'btn btn-primary btn-sm'%>
+        </div>
+      </div>
+      <% end %>
+      <hr>
+    <% else %>
+      <span>Rest Day</span>
+    <% end %>
+  </div>
+  <hr>
+
+
+  <div class='row'>
+    <h2>Saturday Program</h2>
+    <% if Drill.where(day_id:5).count > 0 %>
+      <h3><%= Drill.where(day_id:5).first.exercise.group.name %> Day</h3>
+      <br>
+
+      <div class='col-md-3'><span><strong>Exercises</strong></span></div>
+      <div class='col-md-3'><span><strong>Sets</strong></span></div>
+      <div class='col-md-3'><span><strong>Reps</strong></span></div>
+      <div class='col-md-3'><span style='color:white'><strong>DELETE</strong></span></div>
+
+
+      <% Drill.where(day_id:5).each do |x| %>
+      <div id="drill<%= x.id %>">
+        <div class='col-md-3'>
+          <span><%= x.exercise.name %></span>
+        </div>
+        <div class='col-md-3'>
+          <span><%= x.sets %></span>
+        </div>
+        <div class='col-md-3'>
+          <span><%= x.reps %></span>
+        </div>
+        <div class='col-md-3'>
+          <%= link_to 'Delete', drill_path(x), method: :delete, remote: true, class:'btn btn-primary btn-sm'%>
+        </div>
+      </div>
+      <% end %>
+      <hr>
+    <% else %>
+      <span>Rest Day</span>
+    <% end %>
+  </div>
+  <hr>
+
+
+  <div class='row'>
+    <h2>Sunday Program</h2>
+    <% if Drill.where(day_id:6).count > 0 %>
+      <h3><%= Drill.where(day_id:6).first.exercise.group.name %> Day</h3>
+      <br>
+
+      <div class='col-md-3'><span><strong>Exercises</strong></span></div>
+      <div class='col-md-3'><span><strong>Sets</strong></span></div>
+      <div class='col-md-3'><span><strong>Reps</strong></span></div>
+      <div class='col-md-3'><span style='color:white'><strong>DELETE</strong></span></div>
+
+
+      <% Drill.where(day_id:6).each do |x| %>
+      <div id="drill<%= x.id %>">
+        <div class='col-md-3'>
+          <span><%= x.exercise.name %></span>
+        </div>
+        <div class='col-md-3'>
+          <span><%= x.sets %></span>
+        </div>
+        <div class='col-md-3'>
+          <span><%= x.reps %></span>
+        </div>
+        <div class='col-md-3'>
+          <%= link_to 'Delete', drill_path(x), method: :delete, remote: true, class:'btn btn-primary btn-sm'%>
+        </div>
+      </div>
+      <% end %>
+      <hr>
+    <% else %>
+      <span>Rest Day</span>
+    <% end %>
+  </div>
+  <hr>

@@ -1,0 +1,20 @@
+<button type="button" class="close" data-dismiss="modal" aria-label="Close" style='margin-right:20px'>
+  <span aria-hidden="true">&times;</span>
+</button>
+<h2 class="text-center"> Sign Up </h2>
+
+<div style='margin:10px'>
+  <div id='error'></div>
+  <%= simple_form_for @user, remote:true do |f| %>
+
+      <%= f.input :first_name, required: true %>
+      <%= f.input :last_name, required: true %>
+      <%= f.input :email %>
+      <%= f.input :password, required: true %>
+      <%= f.input :password_confirmation, required: true %>
+      <div class="text-center">
+        <%= f.submit 'Sign Up', class: 'btn btn-primary' %>
+      </div>
+
+  <% end %>
+</div>
