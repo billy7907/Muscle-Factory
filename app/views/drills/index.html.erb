@@ -8,7 +8,15 @@
   <div class='row'>
     <h2>Monday Program</h2>
     <% if Drill.where(day_id:0).count > 0 %>
-      <h3><%= Drill.where(day_id:0).first.exercise.group.name %> Day</h3>
+      <!-- <h3><%= Drill.where(day_id:0).first.exercise.group.name %> Day</h3> -->
+      <% arr = [] %>
+
+      <% Drill.where(day_id:0).each do |x| %>
+        <% if !arr.include?(x.exercise.group.name) %>
+          <% arr.push(x.exercise.group.name) %>
+        <% end %>
+      <% end %>
+      <h3><%= arr.join(' & ') + ' Day' %></h3>
       <br>
 
       <div class='col-md-3'><span><strong>Exercises</strong></span></div>
@@ -46,7 +54,14 @@
   <div class='row'>
     <h2>Tuesday Program</h2>
     <% if Drill.where(day_id:1).count > 0 %>
-      <h3><%= Drill.where(day_id:1).first.exercise.group.name %> Day</h3>
+      <% arr = [] %>
+
+      <% Drill.where(day_id:1).each do |x| %>
+        <% if !arr.include?(x.exercise.group.name) %>
+          <% arr.push(x.exercise.group.name) %>
+        <% end %>
+      <% end %>
+      <h3><%= arr.join(' & ') + ' Day' %></h3>
       <br>
 
       <div class='col-md-3'><span><strong>Exercises</strong></span></div>
@@ -82,7 +97,14 @@
   <div class='row'>
     <h2>Wednesday Program</h2>
     <% if Drill.where(day_id:2).count > 0 %>
-      <h3><%= Drill.where(day_id:2).first.exercise.group.name %> Day</h3>
+      <% arr = [] %>
+
+      <% Drill.where(day_id:2).each do |x| %>
+        <% if !arr.include?(x.exercise.group.name) %>
+          <% arr.push(x.exercise.group.name) %>
+        <% end %>
+      <% end %>
+      <h3><%= arr.join(' & ') + ' Day' %></h3>
       <br>
 
       <div class='col-md-3'><span><strong>Exercises</strong></span></div>
@@ -118,7 +140,14 @@
   <div class='row'>
     <h2>Thursday Program</h2>
     <% if Drill.where(day_id:3).count > 0 %>
-      <h3><%= Drill.where(day_id:3).first.exercise.group.name %> Day</h3>
+      <% arr = [] %>
+
+      <% Drill.where(day_id:3).each do |x| %>
+        <% if !arr.include?(x.exercise.group.name) %>
+          <% arr.push(x.exercise.group.name) %>
+        <% end %>
+      <% end %>
+      <h3><%= arr.join(' & ') + ' Day' %></h3>
       <br>
 
       <div class='col-md-3'><span><strong>Exercises</strong></span></div>
@@ -154,7 +183,14 @@
   <div class='row'>
     <h2>Friday Program</h2>
     <% if Drill.where(day_id:4).count > 0 %>
-      <h3><%= Drill.where(day_id:4).first.exercise.group.name %> Day</h3>
+      <% arr = [] %>
+
+      <% Drill.where(day_id:4).each do |x| %>
+        <% if !arr.include?(x.exercise.group.name) %>
+          <% arr.push(x.exercise.group.name) %>
+        <% end %>
+      <% end %>
+      <h3><%= arr.join(' & ') + ' Day' %></h3>
       <br>
 
       <div class='col-md-3'><span><strong>Exercises</strong></span></div>
@@ -190,7 +226,14 @@
   <div class='row'>
     <h2>Saturday Program</h2>
     <% if Drill.where(day_id:5).count > 0 %>
-      <h3><%= Drill.where(day_id:5).first.exercise.group.name %> Day</h3>
+      <% arr = [] %>
+
+      <% Drill.where(day_id:5).each do |x| %>
+        <% if !arr.include?(x.exercise.group.name) %>
+          <% arr.push(x.exercise.group.name) %>
+        <% end %>
+      <% end %>
+      <h3><%= arr.join(' & ') + ' Day' %></h3>
       <br>
 
       <div class='col-md-3'><span><strong>Exercises</strong></span></div>
@@ -226,7 +269,14 @@
   <div class='row'>
     <h2>Sunday Program</h2>
     <% if Drill.where(day_id:6).count > 0 %>
-      <h3><%= Drill.where(day_id:6).first.exercise.group.name %> Day</h3>
+      <% arr = [] %>
+
+      <% Drill.where(day_id:6).each do |x| %>
+        <% if !arr.include?(x.exercise.group.name) %>
+          <% arr.push(x.exercise.group.name) %>
+        <% end %>
+      <% end %>
+      <h3><%= arr.join(' & ') + ' Day' %></h3>
       <br>
 
       <div class='col-md-3'><span><strong>Exercises</strong></span></div>

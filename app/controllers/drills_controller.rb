@@ -8,7 +8,7 @@ class DrillsController < ApplicationController
   end
 
   def getway
-    @drills = Drill.all
+    @groups = Group.all
   end
 
   def map
@@ -19,6 +19,9 @@ class DrillsController < ApplicationController
     @day = params[:day_id]
     @group = Group.find params[:group_id]
     @exercises = @group.exercises
+    respond_to do |format|
+      format.js {render :new_exercise}
+    end
   end
 
   def create

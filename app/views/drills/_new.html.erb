@@ -1,13 +1,12 @@
 
+<div class='text-center' id="exercises-input">
 
-<div class='text-center'>
-
-
+<i class='glyphicon glyphicon-arrow-left pull-left' id='back-button'></i>
 
   <h1>List of Exercises</h1>
   <% @exercises.each do |e| %>
     <%= simple_form_for @drill, :url => drills_path(@drill, {group_id: @group}) do |f| %>
-      <div class='container'  style='background-color:white'>
+      <div style='background-color:white; margin-right:100px'>
 
         <div class='container' style='margin-right:-70px'>
           <div class=row>

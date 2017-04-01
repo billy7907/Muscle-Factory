@@ -25,7 +25,6 @@
       <ul class="nav navbar-nav navbar-right">
         <% if user_sign_in? %>
         <li><%= link_to 'Find a Gym', map_path, data: {toggle: 'modal', target: '#gmap'} %></li>
-          <li><%= link_to 'Get Started', gateway_path %></li>
           <% if Drill.count > 0 %>
             <li><%= link_to 'My Program', drills_path, data: {toggle: 'modal', target: '#myprogram'} %></li>
           <% end %>

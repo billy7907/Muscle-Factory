@@ -1,47 +1,111 @@
 
 <div class='text-center'>
+
+
   <h1>SELECT A DAY</h1>
   <%= link_to 'Monday', '/groups?day_id=0', class:'btn btn-primary', style:'margin:5px', data: {toggle: 'modal', target: '#monday'} %>
   <% if Drill.where(day_id:0).count > 0 %>
     <i class='glyphicon glyphicon-ok'></i>
+  <% else %>
+    <i class='glyphicon glyphicon-ok' style='display:none'></i>
   <% end %>
   <br>
-  <%= link_to 'Tuesday', '/groups?day_id=1', class:'btn btn-primary', style:'margin:5px' %>
+  <%= link_to 'Tuesday', '/groups?day_id=1', class:'btn btn-primary', style:'margin:5px', data: {toggle: 'modal', target: '#monday'} %>
   <% if Drill.where(day_id:1).count > 0 %>
     <i class='glyphicon glyphicon-ok'></i>
+  <% else %>
+    <i class='glyphicon glyphicon-ok' style='display:none'></i>
   <% end %>
   <br>
-  <%= link_to 'Wednesday','/groups?day_id=2', class:'btn btn-primary', style:'margin:5px' %>
+  <%= link_to 'Wednesday','/groups?day_id=2', class:'btn btn-primary', style:'margin:5px', data: {toggle: 'modal', target: '#monday'} %>
   <% if Drill.where(day_id:2).count > 0 %>
     <i class='glyphicon glyphicon-ok'></i>
+  <% else %>
+    <i class='glyphicon glyphicon-ok' style='display:none'></i>
   <% end %>
   <br>
-  <%= link_to 'Thursday', '/groups?day_id=3', class:'btn btn-primary', style:'margin:5px' %>
+  <%= link_to 'Thursday', '/groups?day_id=3', class:'btn btn-primary', style:'margin:5px', data: {toggle: 'modal', target: '#monday'} %>
   <% if Drill.where(day_id:3).count > 0 %>
     <i class='glyphicon glyphicon-ok'></i>
+  <% else %>
+    <i class='glyphicon glyphicon-ok' style='visibility:hidden'></i>
   <% end %>
   <br>
-  <%= link_to 'Friday','/groups?day_id=4', class:'btn btn-primary', style:'margin:5px' %>
+  <%= link_to 'Friday','/groups?day_id=4', class:'btn btn-primary', style:'margin:5px', data: {toggle: 'modal', target: '#monday'} %>
   <% if Drill.where(day_id:4).count > 0 %>
     <i class='glyphicon glyphicon-ok'></i>
+  <% else %>
+    <i class='glyphicon glyphicon-ok' style='visibility:hidden'></i>
   <% end %>
   <br>
-  <%= link_to 'Saturday','/groups?day_id=5', class:'btn btn-primary', style:'margin:5px' %>
+  <%= link_to 'Saturday','/groups?day_id=5', class:'btn btn-primary', style:'margin:5px', data: {toggle: 'modal', target: '#monday'} %>
   <% if Drill.where(day_id:5).count > 0 %>
     <i class='glyphicon glyphicon-ok'></i>
+  <% else %>
+    <i class='glyphicon glyphicon-ok' style='visibility:hidden'></i>
   <% end %>
   <br>
-  <%= link_to 'Sunday', '/groups?day_id=6', class:'btn btn-primary', style:'margin:5px' %>
+  <%= link_to 'Sunday', '/groups?day_id=6', class:'btn btn-primary', style:'margin:5px', data: {toggle: 'modal', target: '#monday'} %>
   <% if Drill.where(day_id:6).count > 0 %>
     <i class='glyphicon glyphicon-ok'></i>
+  <% else %>
+    <i class='glyphicon glyphicon-ok' style='visibility:hidden'></i>
   <% end %>
 
   <div class="modal fade" id="monday" title="Day">
-    <div class='modal-dialog' style='margin-right:570px'>
-      <div class='modal-content modal-lg' style='padding: 20px'>
+    <div class='modal-dialog' style='margin-right:680px'>
+      <div class='modal-content modal-lg' style='padding: 20px; width:1100px'>
 
       </div>
     </div>
   </div>
+
+  <!-- <div class="modal fade" id="tuesday" title="Day">
+    <div class='modal-dialog' style='margin-right:680px'>
+      <div class='modal-content modal-lg' style='padding: 20px; width:1100px'>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="wednesday" title="Day">
+    <div class='modal-dialog' style='margin-right:680px'>
+      <div class='modal-content modal-lg' style='padding: 20px; width:1100px'>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="thursday" title="Day">
+    <div class='modal-dialog' style='margin-right:680px'>
+      <div class='modal-content modal-lg' style='padding: 20px; width:1100px'>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="friday" title="Day">
+    <div class='modal-dialog' style='margin-right:680px'>
+      <div class='modal-content modal-lg' style='padding: 20px; width:1100px'>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="saturday" title="Day">
+    <div class='modal-dialog' style='margin-right:680px'>
+      <div class='modal-content modal-lg' style='padding: 20px; width:1100px'>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="sunday" title="Day">
+    <div class='modal-dialog' style='margin-right:680px'>
+      <div class='modal-content modal-lg' style='padding: 20px; width:1100px'>
+
+      </div>
+    </div>
+  </div> -->
 
 </div>

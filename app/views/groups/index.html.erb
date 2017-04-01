@@ -2,18 +2,26 @@
   <span aria-hidden="true">&times;</span>
 </button>
 <div class='text-center'>
-  <h1>Choose a Muscle Group</h1>
-  <% @groups.each do |g| %>
-  <%= link_to g.name, "/drills/new?day_id=#{@day}&group_id=#{g.id}", class:'btn btn-primary', style:'margin:5px', data: {toggle: 'modal', target: '#monday'} %>
-  <br>
+  <div id='modal-container'>
+    <div id='groups-input'>
 
-  <div class="modal fade" id="monday" title="Map">
-    <div class='modal-dialog'>
-      <div class='modal-content modal-lg' style='padding: 20px'>
+      <h1>Choose a Muscle Group</h1>
 
+
+      <% @groups.each do |g| %>
+      <%= link_to g.name, "/drills/new?day_id=#{@day}&group_id=#{g.id}", class:'btn btn-primary', remote: true, style:'margin:5px' %>
+      <br>
+
+      <div class="modal" id="monday" title="unique">
+        <div class='modal-dialog'>
+          <div class='modal-content modal-lg' style='padding: 20px'>
+
+          </div>
+        </div>
       </div>
+      <% end %>
     </div>
+
   </div>
 
-  <% end %>
 </div>

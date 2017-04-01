@@ -1,0 +1,13 @@
+$('#groups-input').hide();
+$('#exercises-input').remove();
+$('#modal-container').append("<%= escape_javascript(render('new.html.erb')) %>");
+
+$('#monday').on('hidden.bs.modal', function() {
+  $('#exercises-input').remove();
+  $('#groups-input').show();
+})
+
+$('#back-button').on('click', function(){
+  $('#exercises-input').remove();
+  $('#groups-input').show();
+})
