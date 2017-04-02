@@ -2,13 +2,13 @@
   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
-  <h1>My Program </h1>
+  <h1  style="color:red">My Program </h1>
   <hr>
 
   <div class='row'>
     <h2>Monday Program</h2>
     <% if Drill.where(day_id:0).count > 0 %>
-      <!-- <h3><%= Drill.where(day_id:0).first.exercise.group.name %> Day</h3> -->
+
       <% arr = [] %>
 
       <% Drill.where(day_id:0).each do |x| %>
