@@ -8,21 +8,21 @@
   <% if Drill.where(day_id:0).count > 0 %>
   <i class='glyphicon glyphicon-ok' style='color:red'></i>
   <% else %>
-  <i class='glyphicon glyphicon-ok' style='display:none'></i>
+  <i class='glyphicon glyphicon-ok' style='visibility:hidden'></i>
   <% end %>
   <br>
   <%= link_to 'Tuesday', '/groups?day_id=1', class:'btn btn-default', style:'margin:5px', data: {toggle: 'modal', target: '#monday'} %>
   <% if Drill.where(day_id:1).count > 0 %>
   <i class='glyphicon glyphicon-ok' style='color:red'></i>
   <% else %>
-  <i class='glyphicon glyphicon-ok' style='display:none'></i>
+  <i class='glyphicon glyphicon-ok' style='visibility:hidden'></i>
   <% end %>
   <br>
   <%= link_to 'Wednesday','/groups?day_id=2', class:'btn btn-default', style:'margin:5px', data: {toggle: 'modal', target: '#monday'} %>
   <% if Drill.where(day_id:2).count > 0 %>
   <i class='glyphicon glyphicon-ok' style='color:red'></i>
   <% else %>
-  <i class='glyphicon glyphicon-ok' style='display:none'></i>
+  <i class='glyphicon glyphicon-ok' style='visibility:hidden'></i>
   <% end %>
   <br>
   <%= link_to 'Thursday', '/groups?day_id=3', class:'btn btn-default', style:'margin:5px', data: {toggle: 'modal', target: '#monday'} %>

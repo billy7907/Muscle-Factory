@@ -5,7 +5,7 @@
 
   <h1>List of Exercises</h1>
   <% @exercises.each do |e| %>
-    <%= simple_form_for @drill, :url => drills_path(@drill, {group_id: @group}) do |f| %>
+    <%= simple_form_for @drill, :url => drills_path(@drill, {group_id: @group}), remote:true do |f| %>
       <div style='margin-right:100px'>
 
         <div class='container' style='margin-right:-70px'>
