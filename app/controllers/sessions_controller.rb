@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
         format.js { render :success}
       else
         # flash[:alert] = "Wrong email or password"
-        # render :new
+        # format.html {render :new}
         format.js {render :failure}
       end
     end
