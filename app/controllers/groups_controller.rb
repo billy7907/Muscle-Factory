@@ -4,6 +4,7 @@ class GroupsController < ApplicationController
     @groups = Group.all
     @day = params['day_id']
 
+    render :index, layout: false
   end
 
 

@@ -1,6 +1,6 @@
 $('#groups-input').hide();
 $('#exercises-input').remove();
-$('#modal-container').append("<%= escape_javascript(render('new.html.erb')) %>");
+$('#modal-container').append("<%= escape_javascript(render('new', layout: false)) %>");
 
 $('#monday').on('hidden.bs.modal', function() {
   $('#exercises-input').remove();
