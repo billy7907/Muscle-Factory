@@ -2,8 +2,19 @@
 <div class='text-center'>
   <div style='background-color:rgba(0,0,0,0.7); height:300px; margin-top:150px'>
     <h1 style='color:red; padding-top:50px; font-size:70px'>Muscle Factory</h1>
-    <%= link_to 'Get Started', gateway_path, class:'btn btn-default btn-lg', style:'margin-top:20px; '  %>
+    <% if user_sign_in? %>
+      <%= link_to 'Get Started', gateway_path, class:'btn btn-default btn-lg', style:'margin-top:20px;' %>
+    <% else %>
+    <%= link_to 'Get Started', new_session_path, class:'btn btn-default btn-lg', style:'margin-top:20px;', data: {toggle: 'modal', target: '#login'} %>
+    <% end %>
+  </div>
 
+  <div class="modal fade" id="login" title="Login">
+    <div class='modal-dialog'>
+      <div class='modal-content' style='padding: 20px'>
+
+      </div>
+    </div>
   </div>
 
 </div>
