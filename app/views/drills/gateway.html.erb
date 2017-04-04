@@ -1,53 +1,52 @@
 <%= render partial: 'layouts/navbar' %>
 
 
-
 <div style='background-color:rgba(0,0,0,0.6); height:450px; padding-top:15px; margin-top:100px' class='text-center'>
   <h1 style="color:red">SELECT A DAY</h1>
   <%= link_to 'Monday', '/groups?day_id=0', class:'btn btn-default', style:'margin:5px', data: {toggle: 'modal', target: '#monday'} %>
-  <% if Drill.where(day_id:0).count > 0 %>
+  <% if Drill.where(day_id:0).where(user_id: current_user.id).count > 0 %>
   <i class='glyphicon glyphicon-ok' style='color:red'></i>
   <% else %>
   <i class='glyphicon glyphicon-ok' style='visibility:hidden'></i>
   <% end %>
   <br>
   <%= link_to 'Tuesday', '/groups?day_id=1', class:'btn btn-default', style:'margin:5px', data: {toggle: 'modal', target: '#monday'} %>
-  <% if Drill.where(day_id:1).count > 0 %>
+  <% if Drill.where(day_id:1).where(user_id: current_user.id).count > 0 %>
   <i class='glyphicon glyphicon-ok' style='color:red'></i>
   <% else %>
   <i class='glyphicon glyphicon-ok' style='visibility:hidden'></i>
   <% end %>
   <br>
   <%= link_to 'Wednesday','/groups?day_id=2', class:'btn btn-default', style:'margin:5px', data: {toggle: 'modal', target: '#monday'} %>
-  <% if Drill.where(day_id:2).count > 0 %>
+  <% if Drill.where(day_id:2).where(user_id: current_user.id).count > 0 %>
   <i class='glyphicon glyphicon-ok' style='color:red'></i>
   <% else %>
   <i class='glyphicon glyphicon-ok' style='visibility:hidden'></i>
   <% end %>
   <br>
   <%= link_to 'Thursday', '/groups?day_id=3', class:'btn btn-default', style:'margin:5px', data: {toggle: 'modal', target: '#monday'} %>
-  <% if Drill.where(day_id:3).count > 0 %>
+  <% if Drill.where(day_id:3).where(user_id: current_user.id).count > 0 %>
   <i class='glyphicon glyphicon-ok' style='color:red'></i>
   <% else %>
   <i class='glyphicon glyphicon-ok' style='visibility:hidden'></i>
   <% end %>
   <br>
   <%= link_to 'Friday','/groups?day_id=4', class:'btn btn-default', style:'margin:5px', data: {toggle: 'modal', target: '#monday'} %>
-  <% if Drill.where(day_id:4).count > 0 %>
+  <% if Drill.where(day_id:4).where(user_id: current_user.id).count > 0 %>
   <i class='glyphicon glyphicon-ok' style='color:red'></i>
   <% else %>
   <i class='glyphicon glyphicon-ok' style='visibility:hidden'></i>
   <% end %>
   <br>
   <%= link_to 'Saturday','/groups?day_id=5', class:'btn btn-default', style:'margin:5px', data: {toggle: 'modal', target: '#monday'} %>
-  <% if Drill.where(day_id:5).count > 0 %>
+  <% if Drill.where(day_id:5).where(user_id: current_user.id).count > 0 %>
   <i class='glyphicon glyphicon-ok' style='color:red'></i>
   <% else %>
   <i class='glyphicon glyphicon-ok' style='visibility:hidden'></i>
   <% end %>
   <br>
   <%= link_to 'Sunday', '/groups?day_id=6', class:'btn btn-default', style:'margin:5px', data: {toggle: 'modal', target: '#monday'} %>
-  <% if Drill.where(day_id:6).count > 0 %>
+  <% if Drill.where(day_id:6).where(user_id: current_user.id).count > 0 %>
   <i class='glyphicon glyphicon-ok' style='color:red'></i>
   <% else %>
   <i class='glyphicon glyphicon-ok' style='visibility:hidden'></i>

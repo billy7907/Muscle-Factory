@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   get 'drills/gateway' => 'drills#gateway', as: :gateway
   get 'drills/map' => 'drills#map', as: :map
+  get 'drills/share' => 'drills#share', as: :share
 
   get '/auth/twitter', as: :sign_in_with_twitter
   get 'auth/twitter/callback' => 'callbacks#twitter'
@@ -19,7 +20,7 @@ Rails.application.routes.draw do
     delete :destroy, on: :collection
   end
 
-  resources :drills
+  resources :drills, except: [:update, :edit]
 
   resources :groups, only: :index
 

@@ -24,8 +24,9 @@
 
       <ul class="nav navbar-nav navbar-right">
         <% if user_sign_in? %>
+        <li><%= link_to 'Find a Program', share_path, data: {toggle: 'modal', target: '#findprogram'} %></li>
         <li><%= link_to 'Find a Gym', map_path, data: {toggle: 'modal', target: '#gmap'} %></li>
-          <% if Drill.count > 0 %>
+          <% if Drill.where(user_id: current_user.id).count > 0 %>
             <li><%= link_to 'My Program', drills_path, data: {toggle: 'modal', target: '#myprogram'} %></li>
           <% end %>
           <li><%= link_to current_user.full_name, edit_user_path(current_user), data: {toggle: 'modal', target: '#edituser'} %></li>
@@ -35,6 +36,14 @@
           <li><%= link_to "Sign Up", new_user_path, data: {toggle: 'modal', target: '#signup'} %></li>
         <% end %>
       </ul>
+
+      <div class="modal fade" id="findprogram" title="Map">
+        <div class='modal-dialog'>
+          <div class='modal-content' style='padding: 20px'>
+
+          </div>
+        </div>
+      </div>
 
       <div class="modal fade" id="gmap" title="Map">
         <div class='modal-dialog'>

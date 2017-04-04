@@ -3,11 +3,12 @@ class DrillsController < ApplicationController
   before_action :find_drill, only: [:show, :destroy]
 
   def index
-    @drills = Drill.all
-
+    @drills = Drill.where(user_id: current_user.id)
+    render :index, layout: false
   end
 
   def getway
+    @drills = Drill.where(user_id: current_user.id)
     @groups = Group.all
   end
 
@@ -16,6 +17,7 @@ class DrillsController < ApplicationController
 
   def new
     @drill = Drill.new
+
     @day = params[:day_id]
     @group = Group.find params[:group_id]
     @exercises = @group.exercises
@@ -27,6 +29,7 @@ class DrillsController < ApplicationController
   def create
     day = params[:day_id]
     drill = Drill.new drill_params
+    drill.user = current_user
     if drill.save
       redirect_to new_drill_path(day_id: drill.day_id, group_id: params[:group_id])
     else
@@ -34,14 +37,8 @@ class DrillsController < ApplicationController
     end
   end
 
-
-  def show
-  end
-
-  def edit
-  end
-
-  def update
+  def share
+    @drills = Drill.all
   end
 
   def destroy
