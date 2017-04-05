@@ -25,10 +25,10 @@
       <ul class="nav navbar-nav navbar-right">
         <% if user_sign_in? %>
         <li><%= link_to share_path, id:'findprogram1', data: {toggle: 'modal', target: '#findprogram'} do %>
-          <i class='glyphicon glyphicon-search'></i> Find Program
+          <i class='glyphicon glyphicon-search'></i>
         <% end %></li>
         <li><%= link_to map_path, id:'findgym1', data: {toggle: 'modal', target: '#gmap'} do %>
-          <i class='glyphicon glyphicon-map-marker'></i> Gym
+          <i class='glyphicon glyphicon-map-marker'></i> Map
         <% end %></li>
           <% if Drill.where(user_id: current_user.id).count > 0 %>
             <li><%= link_to drills_path, id:'myprogram1', data: {toggle: 'modal', target: '#myprogram'} do %>
@@ -62,7 +62,7 @@
 
       <div class="modal fade" id="myprogram" title="My Program">
         <div class='modal-dialog modal-lg'>
-          <div class='modal-content' style='padding: 20px'>
+          <div class='modal-content' style='padding: 20px; margin-right:50px'>
 
           </div>
         </div>

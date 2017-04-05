@@ -9,7 +9,7 @@
       <h1 style='color:red'>Choose a Muscle Group</h1>
 
       <% @groups.each do |g| %>
-        <%= link_to g.name, "/drills/new?day_id=#{@day}&group_id=#{g.id}", class:'btn btn-default', remote: true, style:'margin:5px' %>
+        <%= link_to g.name, "/drills/new?day_id=#{@day}&group_id=#{g.id}", class:'btn btn-default', remote: true, style:'margin:5px;' %>
       <br>
       <% end %>
 
