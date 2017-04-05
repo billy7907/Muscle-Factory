@@ -1,0 +1,8 @@
+if (window.__userId__ == <%= @userId %>) {
+  window.__userId__ = null;
+  $('#program').children().remove();
+} else {
+  $('#program').children().remove();
+  $('#program').append("<%= escape_javascript(render('filter_program', layout: false)) %>")
+  window.__userId__ = <%= @userId %>
+}

@@ -3,15 +3,15 @@
   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
-  <h1 id='title'>Program by Other Users</h1>
+  <h1 id='title' style='color: red'>Program by Other Users</h1>
 
   <hr>
   <% arr_trainer = [] %>
   <% arr_group =[] %>
 
   <% @drills.each do |x| %>
-    <% if !arr_trainer.include?(x.user.full_name) %>
-      <% arr_trainer.push(x.user.full_name) %>
+    <% if !arr_trainer.include?(x.user) %>
+      <% arr_trainer.push(x.user) %>
     <% end %>
 
     <% if !arr_group.include?(x.exercise.group.name) %>
@@ -19,138 +19,28 @@
     <% end %>
   <% end %>
 
-    <% arr_trainer.each_with_index do |x, i| %>
-      <h3 id="<%= i %>">Trainer: <%= x %></h3>
-    <% end %>
+  <% arr_trainer.each_with_index do |x, i| %>
+    <h3><%= link_to "Trainer: #{x.full_name}", filter_path(user_id: x.id), remote:true %></h3>
+  <% end %>
 
 
     <div id='program'>
-      <h4>Monday</h4>
-      <div class='row' style='margin: 0'>
-        <% if Drill.where(day_id: 0).count > 0 %>
-        <div class='col-md-4'><p><strong>Exercises</strong></p></div>
-        <div class='col-md-4'><p><strong>Sets</strong></p></div>
-        <div class='col-md-4'><p><strong>Reps</strong></p></div>
-        <% Drill.where(day_id: 0).each do |x| %>
-        <div class='col-md-4'><%= x.exercise.name %></div>
-        <div class='col-md-4'><%= x.sets %></div>
-        <div class='col-md-4'><%= x.reps %></div>
-        <% end %>
-        <% else %>
-        <p>Rest Day</p>
-        <% end %>
-      </div>
 
-      <h4>Tuesday</h4>
-      <div class='row' style='margin: 0'>
-        <% if Drill.where(day_id: 1).count > 0 %>
-        <div class='col-md-4'><p><strong>Exercises</strong></p></div>
-        <div class='col-md-4'><p><strong>Sets</strong></p></div>
-        <div class='col-md-4'><p><strong>Reps</strong></p></div>
-        <% Drill.where(day_id: 1).each do |x| %>
-        <div class='col-md-4'><%= x.exercise.name %></div>
-        <div class='col-md-4'><%= x.sets %></div>
-        <div class='col-md-4'><%= x.reps %></div>
-        <% end %>
-        <% else %>
-        <p>Rest Day</p>
-        <% end %>
-      </div>
-
-      <h4>Wednesday</h4>
-      <div class='row' style='margin: 0'>
-        <% if Drill.where(day_id: 2).count > 0 %>
-        <div class='col-md-4'><p><strong>Exercises</strong></p></div>
-        <div class='col-md-4'><p><strong>Sets</strong></p></div>
-        <div class='col-md-4'><p><strong>Reps</strong></p></div>
-        <% Drill.where(day_id: 2).each do |x| %>
-        <div class='col-md-4'><%= x.exercise.name %></div>
-        <div class='col-md-4'><%= x.sets %></div>
-        <div class='col-md-4'><%= x.reps %></div>
-        <% end %>
-        <% else %>
-        <p>Rest Day</p>
-        <% end %>
-      </div>
-
-      <h4>Thursday</h4>
-      <div class='row' style='margin: 0'>
-        <% if Drill.where(day_id: 3).count > 0  %>
-        <div class='col-md-4'><p><strong>Exercises</strong></p></div>
-        <div class='col-md-4'><p><strong>Sets</strong></p></div>
-        <div class='col-md-4'><p><strong>Reps</strong></p></div>
-        <% Drill.where(day_id: 3).each do |x| %>
-        <div class='col-md-4'><%= x.exercise.name %></div>
-        <div class='col-md-4'><%= x.sets %></div>
-        <div class='col-md-4'><%= x.reps %></div>
-        <% end %>
-        <% else %>
-        <p>Rest Day</p>
-        <% end %>
-      </div>
-
-      <h4>Friday</h4>
-      <div class='row' style='margin: 0'>
-        <% if Drill.where(day_id: 4).count > 0 %>
-        <div class='col-md-4'><p><strong>Exercises</strong></p></div>
-        <div class='col-md-4'><p><strong>Sets</strong></p></div>
-        <div class='col-md-4'><p><strong>Reps</strong></p></div>
-        <% Drill.where(day_id: 4).each do |x| %>
-        <div class='col-md-4'><%= x.exercise.name %></div>
-        <div class='col-md-4'><%= x.sets %></div>
-        <div class='col-md-4'><%= x.reps %></div>
-        <% end %>
-        <% else %>
-        <p>Rest Day</p>
-        <% end %>
-      </div>
-
-      <h4>Saturday</h4>
-      <div class='row' style='margin: 0'>
-        <% if Drill.where(day_id: 5).count > 0%>
-        <div class='col-md-4'><p><strong>Exercises</strong></p></div>
-        <div class='col-md-4'><p><strong>Sets</strong></p></div>
-        <div class='col-md-4'><p><strong>Reps</strong></p></div>
-        <% Drill.where(day_id: 5).each do |x| %>
-        <div class='col-md-4'><%= x.exercise.name %></div>
-        <div class='col-md-4'><%= x.sets %></div>
-        <div class='col-md-4'><%= x.reps %></div>
-        <% end %>
-        <% else %>
-        <p>Rest Day</p>
-        <% end %>
-      </div>
-
-      <h4>Sunday</h4>
-      <div class='row' style='margin: 0'>
-        <% if Drill.where(day_id: 6).count > 0 %>
-        <div class='col-md-4'><p><strong>Exercises</strong></p></div>
-        <div class='col-md-4'><p><strong>Sets</strong></p></div>
-        <div class='col-md-4'><p><strong>Reps</strong></p></div>
-        <% Drill.where(day_id: 6).each do |x| %>
-        <div class='col-md-4'><%= x.exercise.name %></div>
-        <div class='col-md-4'><%= x.sets %></div>
-        <div class='col-md-4'><%= x.reps %></div>
-        <% end %>
-        <% else %>
-        <p>Rest Day</p>
-        <% end %>
-      </div>
 
     </div>
 
 </div>
 
 
-<script>
+<!-- <script>
   $('#program').hide();
-  for (n=0; n<100; n++){
+  for (n=0; n<`${<%= arr_trainer.length %>}`; n++){
     $(`#${n}`).click(function(){
       $('#program').toggle()
     })
 
   }
-</script>
+</script> -->
 
 
 

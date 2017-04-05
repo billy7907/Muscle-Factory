@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'drills/gateway' => 'drills#gateway', as: :gateway
   get 'drills/map' => 'drills#map', as: :map
   get 'drills/share' => 'drills#share', as: :share
+  get 'drills/filter' => 'drills#filter', as: :filter
 
   get '/auth/twitter', as: :sign_in_with_twitter
   get 'auth/twitter/callback' => 'callbacks#twitter'

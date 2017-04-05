@@ -1,0 +1,168 @@
+<% arr1 = [] %>
+
+<% Drill.where(day_id:0).each do |x| %>
+  <% if !arr1.include?(x.exercise.group.name) %>
+    <% arr1.push(x.exercise.group.name) %>
+  <% end %>
+<% end %>
+
+<div class='row' style='margin: 0' id='filter-row'>
+  <% if @drills.where(day_id: 0).count > 0 %>
+  <h4>Monday: <%= arr1.join(' & ') + ' Day' %></h4>
+  <div class='col-md-4'><p><strong>Exercises</strong></p></div>
+  <div class='col-md-4'><p><strong>Sets</strong></p></div>
+  <div class='col-md-4'><p><strong>Reps</strong></p></div>
+  <% @drills.where(day_id: 0).each do |x| %>
+  <div class='col-md-4'><%= x.exercise.name %></div>
+  <div class='col-md-4'><%= x.sets %></div>
+  <div class='col-md-4'><%= x.reps %></div>
+  <% end %>
+  <% else %>
+  <h4>Monday: Rest Day</h4>
+  <% end %>
+</div>
+<hr>
+
+<% arr2 = [] %>
+
+<% Drill.where(day_id:1).each do |x| %>
+  <% if !arr2.include?(x.exercise.group.name) %>
+    <% arr2.push(x.exercise.group.name) %>
+  <% end %>
+<% end %>
+<div class='row' style='margin: 0' id='filter-row'>
+  <% if @drills.where(day_id: 1).count > 0 %>
+  <h4>Tuesday: <%= arr2.join(' & ') + ' Day' %></h4>
+  <div class='col-md-4'><p><strong>Exercises</strong></p></div>
+  <div class='col-md-4'><p><strong>Sets</strong></p></div>
+  <div class='col-md-4'><p><strong>Reps</strong></p></div>
+  <% @drills.where(day_id: 1).each do |x| %>
+  <div class='col-md-4'><%= x.exercise.name %></div>
+  <div class='col-md-4'><%= x.sets %></div>
+  <div class='col-md-4'><%= x.reps %></div>
+  <% end %>
+  <% else %>
+  <h4>Tuesday: Rest Day</h4>
+  <% end %>
+</div>
+<hr>
+
+<% arr3 = [] %>
+
+<% Drill.where(day_id:2).each do |x| %>
+  <% if !arr3.include?(x.exercise.group.name) %>
+    <% arr3.push(x.exercise.group.name) %>
+  <% end %>
+<% end %>
+<div class='row' style='margin: 0' id='filter-row'>
+  <% if @drills.where(day_id: 2).count > 0 %>
+  <h4>Wednesday: <%= arr3.join(' & ') + ' Day' %></h4>
+  <div class='col-md-4'><p><strong>Exercises</strong></p></div>
+  <div class='col-md-4'><p><strong>Sets</strong></p></div>
+  <div class='col-md-4'><p><strong>Reps</strong></p></div>
+  <% @drills.where(day_id: 2).each do |x| %>
+  <div class='col-md-4'><%= x.exercise.name %></div>
+  <div class='col-md-4'><%= x.sets %></div>
+  <div class='col-md-4'><%= x.reps %></div>
+  <% end %>
+  <% else %>
+  <h4>Wednesday: Rest Day</h4>
+  <% end %>
+</div>
+<hr>
+
+<% arr4 = [] %>
+
+<% Drill.where(day_id:3).each do |x| %>
+  <% if !arr4.include?(x.exercise.group.name) %>
+    <% arr4.push(x.exercise.group.name) %>
+  <% end %>
+<% end %>
+<div class='row' style='margin: 0' id='filter-row'>
+  <% if @drills.where(day_id: 3).count > 0 %>
+  <h4>Wednesday: <%= arr4.join(' & ') + ' Day' %></h4>
+  <div class='col-md-4'><p><strong>Exercises</strong></p></div>
+  <div class='col-md-4'><p><strong>Sets</strong></p></div>
+  <div class='col-md-4'><p><strong>Reps</strong></p></div>
+  <% @drills.where(day_id: 3).each do |x| %>
+  <div class='col-md-4'><%= x.exercise.name %></div>
+  <div class='col-md-4'><%= x.sets %></div>
+  <div class='col-md-4'><%= x.reps %></div>
+  <% end %>
+  <% else %>
+  <h4>Wednesday: Rest Day</h4>
+  <% end %>
+</div>
+<hr>
+
+<% arr5 = [] %>
+
+<% Drill.where(day_id:4).each do |x| %>
+  <% if !arr5.include?(x.exercise.group.name) %>
+    <% arr5.push(x.exercise.group.name) %>
+  <% end %>
+<% end %>
+<div class='row' style='margin: 0' id='filter-row'>
+  <% if @drills.where(day_id: 4).count > 0 %>
+  <h4>Friday: <%= arr5.join(' & ') + ' Day' %></h4>
+  <div class='col-md-4'><p><strong>Exercises</strong></p></div>
+  <div class='col-md-4'><p><strong>Sets</strong></p></div>
+  <div class='col-md-4'><p><strong>Reps</strong></p></div>
+  <% @drills.where(day_id: 4).each do |x| %>
+  <div class='col-md-4'><%= x.exercise.name %></div>
+  <div class='col-md-4'><%= x.sets %></div>
+  <div class='col-md-4'><%= x.reps %></div>
+  <% end %>
+  <% else %>
+  <h4>Friday: Rest Day</h4>
+  <% end %>
+</div>
+<hr>
+
+<% arr6 = [] %>
+
+<% Drill.where(day_id:5).each do |x| %>
+  <% if !arr6.include?(x.exercise.group.name) %>
+    <% arr6.push(x.exercise.group.name) %>
+  <% end %>
+<% end %>
+<div class='row' style='margin: 0' id='filter-row'>
+  <% if @drills.where(day_id: 5).count > 0%>
+  <h4>Saturday: <%= arr6.join(' & ') + ' Day' %></h4>
+  <div class='col-md-4'><p><strong>Exercises</strong></p></div>
+  <div class='col-md-4'><p><strong>Sets</strong></p></div>
+  <div class='col-md-4'><p><strong>Reps</strong></p></div>
+  <% @drills.where(day_id: 5).each do |x| %>
+  <div class='col-md-4'><%= x.exercise.name %></div>
+  <div class='col-md-4'><%= x.sets %></div>
+  <div class='col-md-4'><%= x.reps %></div>
+  <% end %>
+  <% else %>
+  <h4>Saturday: Rest Day</h4>
+  <% end %>
+</div>
+<hr>
+
+<% arr7 = [] %>
+
+<% Drill.where(day_id:6).each do |x| %>
+  <% if !arr7.include?(x.exercise.group.name) %>
+    <% arr7.push(x.exercise.group.name) %>
+  <% end %>
+<% end %>
+<div class='row' style='margin: 0' id='filter-row'>
+  <% if @drills.where(day_id: 6).count > 0 %>
+  <h4>Sunday: <%= arr7.join(' & ') + ' Day' %></h4>
+  <div class='col-md-4'><p><strong>Exercises</strong></p></div>
+  <div class='col-md-4'><p><strong>Sets</strong></p></div>
+  <div class='col-md-4'><p><strong>Reps</strong></p></div>
+  <% @drills.where(day_id: 6).each do |x| %>
+  <div class='col-md-4'><%= x.exercise.name %></div>
+  <div class='col-md-4'><%= x.sets %></div>
+  <div class='col-md-4'><%= x.reps %></div>
+  <% end %>
+  <% else %>
+  <h4>Sunday: Rest Day</h4>
+  <% end %>
+</div>
+<hr>

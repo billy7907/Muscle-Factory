@@ -25,3 +25,29 @@ body {
   @include transition(all 0.6s ease-in-out);
   color:white;
 }
+
+.navbar-default{
+  background-color: rgba(255,255,255,0.8);
+  border: none;
+}
+
+
+
+#login1, #signup1, #findprogram1, #findgym1, #myprogram1, #user1, #logout1 {
+  color:red;
+  font-size:15px;
+  font-weight: bold
+}
+
+#title1 {
+  font-family: impact;
+  font-size:25px;
+  color:red
+}
+
+
+
+
+
+
+//

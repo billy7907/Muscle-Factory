@@ -6,10 +6,10 @@
 
 
   <h1 style="color:red; margin-right: 80px">My Program</h1>
-  <hr>
+  <hr style='margin-right: 80px'>
 
-  <div class='row'>
-    <h2>Monday Program</h2>
+  <div class='row' id='index-row'>
+    <h2>Monday</h2>
     <% if @drills.where(day_id:0).count > 0 %>
 
       <% arr = [] %>
@@ -51,11 +51,11 @@
       <span>Rest Day</span>
     <% end %>
   </div>
-  <hr>
+  <hr style='margin-right: 80px'>
 
 
-  <div class='row'>
-    <h2>Tuesday Program</h2>
+  <div class='row' id='index-row'>
+    <h2>Tuesday</h2>
     <% if @drills.where(day_id:1).count > 0 %>
       <% arr = [] %>
 
@@ -94,11 +94,11 @@
       <span>Rest Day</span>
     <% end %>
   </div>
-  <hr>
+  <hr style='margin-right: 80px'>
 
 
-  <div class='row'>
-    <h2>Wednesday Program</h2>
+  <div class='row' id='index-row'>
+    <h2>Wednesday</h2>
     <% if @drills.where(day_id:2).count > 0 %>
       <% arr = [] %>
 
@@ -137,11 +137,11 @@
       <span>Rest Day</span>
     <% end %>
   </div>
-  <hr>
+  <hr style='margin-right: 80px'>
 
 
-  <div class='row'>
-    <h2>Thursday Program</h2>
+  <div class='row' id='index-row'>
+    <h2>Thursday</h2>
     <% if @drills.where(day_id:3).count > 0 %>
       <% arr = [] %>
 
@@ -180,11 +180,11 @@
       <span>Rest Day</span>
     <% end %>
   </div>
-  <hr>
+  <hr style='margin-right: 80px'>
 
 
-  <div class='row'>
-    <h2>Friday Program</h2>
+  <div class='row' id='index-row'>
+    <h2>Friday</h2>
     <% if @drills.where(day_id:4).count > 0 %>
       <% arr = [] %>
 
@@ -223,11 +223,11 @@
       <span>Rest Day</span>
     <% end %>
   </div>
-  <hr>
+  <hr style='margin-right: 80px'>
 
 
-  <div class='row'>
-    <h2>Saturday Program</h2>
+  <div class='row' id='index-row'>
+    <h2>Saturday</h2>
     <% if @drills.where(day_id:5).count > 0 %>
       <% arr = [] %>
 
@@ -266,11 +266,11 @@
       <span>Rest Day</span>
     <% end %>
   </div>
-  <hr>
+  <hr style='margin-right: 80px'>
 
 
-  <div class='row'>
-    <h2>Sunday Program</h2>
+  <div class='row' id='index-row'>
+    <h2>Sunday</h2>
     <% if @drills.where(day_id:6).count > 0 %>
       <% arr = [] %>
 
@@ -309,5 +309,5 @@
       <span>Rest Day</span>
     <% end %>
   </div>
-  <hr>
+  <hr style='margin-right: 80px'>
 </div>

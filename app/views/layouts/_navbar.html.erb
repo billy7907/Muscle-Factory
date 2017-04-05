@@ -9,37 +9,43 @@
 
       </button>
 
-      <a class='navbar-brand' href="/">
+      <!-- <a class='navbar-brand' href="/">
         <span class="" aria-hidden="true">🏋️</span>
-      </a>
+      </a> -->
 
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class= "nav navbar-nav">
-        <li><a href="/">Muscle Factory</a></li>
+        <li><a href="/" id='title1'>Muscle Factory</a></li>
       </ul>
 
 
 
       <ul class="nav navbar-nav navbar-right">
         <% if user_sign_in? %>
-        <li><%= link_to 'Find a Program', share_path, data: {toggle: 'modal', target: '#findprogram'} %></li>
-        <li><%= link_to 'Find a Gym', map_path, data: {toggle: 'modal', target: '#gmap'} %></li>
+        <li><%= link_to share_path, id:'findprogram1', data: {toggle: 'modal', target: '#findprogram'} do %>
+          <i class='glyphicon glyphicon-search'></i> Find Program
+        <% end %></li>
+        <li><%= link_to map_path, id:'findgym1', data: {toggle: 'modal', target: '#gmap'} do %>
+          <i class='glyphicon glyphicon-map-marker'></i> Gym
+        <% end %></li>
           <% if Drill.where(user_id: current_user.id).count > 0 %>
-            <li><%= link_to 'My Program', drills_path, data: {toggle: 'modal', target: '#myprogram'} %></li>
+            <li><%= link_to drills_path, id:'myprogram1', data: {toggle: 'modal', target: '#myprogram'} do %>
+              <i class='glyphicon glyphicon-user'></i> My Program
+            <% end %></li>
           <% end %>
-          <li><%= link_to current_user.full_name, edit_user_path(current_user), data: {toggle: 'modal', target: '#edituser'} %></li>
-          <li><%= link_to "Logout", sessions_path, method: :delete,data: {confirm: "are you sure you want to log out?"}%></li>
+          <li><%= link_to current_user.full_name, edit_user_path(current_user), id:'user1', data: {toggle: 'modal', target: '#edituser'} %></li>
+          <li><%= link_to "Logout", sessions_path, id:'logout1', method: :delete, data: {confirm: "are you sure you want to log out?"}%></li>
         <% else %>
-          <li><%= link_to "Login", new_session_path, data: {toggle: 'modal', target: '#login'}%></li>
-          <li><%= link_to "Sign Up", new_user_path, data: {toggle: 'modal', target: '#signup'} %></li>
+          <li><%= link_to "Login", new_session_path, id:'login1', data: {toggle: 'modal', target: '#login'}%></li>
+          <li><%= link_to "Sign Up", new_user_path, id:'signup1', data: {toggle: 'modal', target: '#signup'} %></li>
         <% end %>
       </ul>
 
       <div class="modal fade" id="findprogram" title="Map">
         <div class='modal-dialog'>
-          <div class='modal-content' style='padding: 20px'>
+          <div class='modal-content' style='padding: 20px; width:1000px; margin-left:-200px'>
 
           </div>
         </div>
