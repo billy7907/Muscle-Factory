@@ -48,7 +48,6 @@ class DrillsController < ApplicationController
 
   def share
     @drills = Drill.all
-
     render :share, layout: false
   end
 

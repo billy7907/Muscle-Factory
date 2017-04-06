@@ -1,6 +1,6 @@
 <% arr1 = [] %>
 
-<% Drill.where(day_id:0).each do |x| %>
+<% @drills.where(day_id:0).each do |x| %>
   <% if !arr1.include?(x.exercise.group.name) %>
     <% arr1.push(x.exercise.group.name) %>
   <% end %>
@@ -25,7 +25,7 @@
 
 <% arr2 = [] %>
 
-<% Drill.where(day_id:1).each do |x| %>
+<% @drills.where(day_id:1).each do |x| %>
   <% if !arr2.include?(x.exercise.group.name) %>
     <% arr2.push(x.exercise.group.name) %>
   <% end %>
@@ -49,7 +49,7 @@
 
 <% arr3 = [] %>
 
-<% Drill.where(day_id:2).each do |x| %>
+<% @drills.where(day_id:2).each do |x| %>
   <% if !arr3.include?(x.exercise.group.name) %>
     <% arr3.push(x.exercise.group.name) %>
   <% end %>
@@ -73,7 +73,7 @@
 
 <% arr4 = [] %>
 
-<% Drill.where(day_id:3).each do |x| %>
+<% @drills.where(day_id:3).each do |x| %>
   <% if !arr4.include?(x.exercise.group.name) %>
     <% arr4.push(x.exercise.group.name) %>
   <% end %>
@@ -97,7 +97,7 @@
 
 <% arr5 = [] %>
 
-<% Drill.where(day_id:4).each do |x| %>
+<% @drills.where(day_id:4).each do |x| %>
   <% if !arr5.include?(x.exercise.group.name) %>
     <% arr5.push(x.exercise.group.name) %>
   <% end %>
@@ -121,7 +121,7 @@
 
 <% arr6 = [] %>
 
-<% Drill.where(day_id:5).each do |x| %>
+<% @drills.where(day_id:5).each do |x| %>
   <% if !arr6.include?(x.exercise.group.name) %>
     <% arr6.push(x.exercise.group.name) %>
   <% end %>
@@ -145,7 +145,7 @@
 
 <% arr7 = [] %>
 
-<% Drill.where(day_id:6).each do |x| %>
+<% @drills.where(day_id:6).each do |x| %>
   <% if !arr7.include?(x.exercise.group.name) %>
     <% arr7.push(x.exercise.group.name) %>
   <% end %>

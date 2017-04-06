@@ -20,7 +20,7 @@
   <% end %>
 
   <% arr_trainer.each_with_index do |x, i| %>
-    <h3><%= link_to "Trainer: #{x.full_name}", filter_path(user_id: x.id), remote:true %></h3>
+    <h3><%= link_to "#{x.full_name}", filter_path(user_id: x.id), remote:true %></h3>
   <% end %>
 
 
@@ -30,20 +30,3 @@
     </div>
 
 </div>
-
-
-<!-- <script>
-  $('#program').hide();
-  for (n=0; n<`${<%= arr_trainer.length %>}`; n++){
-    $(`#${n}`).click(function(){
-      $('#program').toggle()
-    })
-
-  }
-</script> -->
-
-
-
-
-
-<!--  -->
