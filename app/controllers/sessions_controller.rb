@@ -8,11 +8,8 @@ class SessionsController < ApplicationController
     respond_to do |format|
       if @user && @user.authenticate(params[:password])
         session[:user_id] = @user.id
-        # redirect_to root_path, notice: "Logged In"
         format.js { render :success}
       else
-        # flash[:alert] = "Wrong email or password"
-        # format.html {render :new}
         format.js {render :failure}
       end
     end
