@@ -7,5 +7,4 @@ class GroupsController < ApplicationController
     render :index, layout: false
   end
 
-
 end
