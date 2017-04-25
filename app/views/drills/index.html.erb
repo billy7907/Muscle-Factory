@@ -67,7 +67,6 @@
       <div class='col-md-3'><span><strong>Reps</strong></span></div>
       <div class='col-md-3'><span style='color:Gainsboro'><strong>DELETE</strong></span></div>
 
-
       <% @drills.where(day_id:1).each do |x| %>
       <div id="drill<%= x.id %>">
         <div class='col-md-3'>
@@ -108,7 +107,6 @@
       <div class='col-md-3'><span><strong>Sets</strong></span></div>
       <div class='col-md-3'><span><strong>Reps</strong></span></div>
       <div class='col-md-3'><span style='color:Gainsboro'><strong>DELETE</strong></span></div>
-
 
       <% @drills.where(day_id:2).each do |x| %>
       <div id="drill<%= x.id %>">
