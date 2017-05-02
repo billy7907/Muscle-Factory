@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
   root to: "home#index"
-
   patch '/users/:id/edit_password' => 'users#edit_password', as: :edit_password
 
   get 'drills/gateway' => 'drills#gateway', as: :gateway
@@ -11,18 +10,15 @@ Rails.application.routes.draw do
 
   get '/auth/twitter', as: :sign_in_with_twitter
   get 'auth/twitter/callback' => 'callbacks#twitter'
-
   get "/auth/facebook", as: :sign_in_facebook
   get "/auth/facebook/callback" => 'callbacks#facebook'
-
-  resources :users, except: [:destroy]
 
   resources :sessions, only: [:new, :create] do
     delete :destroy, on: :collection
   end
 
+  resources :users, except: [:destroy]
   resources :drills, except: [:update, :edit]
-
   resources :groups, only: :index
 
 end
