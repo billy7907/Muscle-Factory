@@ -18,7 +18,6 @@ class DrillsController < ApplicationController
   def filter
     @drills = Drill.where(user_id: params[:user_id])
     @userId = params[:user_id]
-    p @drills
     respond_to do |format|
       format.js {render :filter}
     end
